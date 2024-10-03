@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>SKIN DISEASES DETECTION</h1>
+    </header>
+
+    <div class="container">
+        <h1>Image Classification</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <h2>Or Use Camera</h2>
+        <button id="activate-camera-btn">Activate Camera</button>
+        <video id="camera" autoplay></video>
+        <button id="capture-btn" class="centered">Capture Image</button>
+        <canvas id="canvas"></canvas>
+
+        <div class="error" id="error-message"></div>
+        <div class="result" id="result-message"></div>
+    </div>
+
+    <footer class="footer">
+        <img src="../static/images/holologo.png" alt="holoware">
+        <p>*Consult a doctor for a second opinion as this output is not always accurate.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
